@@ -1,10 +1,13 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    isLogin: false,
+    register: {
+      phone:'',
+    },
+    user: '',
+    materialList: []
   },
   getters: {
   },
@@ -13,5 +16,5 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-  },
-});
+  }
+})
