@@ -134,7 +134,7 @@
           <div class="mk-extra-select">
             <button @click="selectChange($event.target,0)" class="active">文章校验</button>
             <button @click="selectChange($event.target,1)">文章摘要</button>
-            <button @click="selectChange($event.target,2)">文章翻译</button>
+            <!-- <button @click="selectChange($event.target,2)">文章翻译</button> -->
             <button @click="selectChange($event.target,3)">词典查询</button>
             <button @click="selectChange($event.target,4)">文字识别</button>
             <button @click="selectChange($event.target,5)">历史版本</button>
@@ -331,11 +331,12 @@ export default {
         },
         //导出为word文件
         output() {
+          console.log(this.editor.getHtml());
           let htmlStr = `
             <!DOCTYPE html>
             <html lang="en">
               <body style="font-family:方正仿宋_GBK;mso-ascii-font-family:'Times New Roman';">
-                ${this.editor.getHtml}
+                ${this.editor.getHtml()}
               </body>
             </html>`;  //把获取到的html放入到原生的html中
           saveAs(
@@ -453,26 +454,26 @@ export default {
         
         /** 生成标题 */
       createTitle() {
-          this.article.title = '大力弘扬企业家精神';
-            console.log(this.article.title)
-            this.saveArticle();
-          // if(!this.preview.flag) {
-          //   this.$messgae.error("当前正处于预览状态");
-          //   return ;
-          // }
-          // this.$apiFun.file.create.title(this.editor.getText()).then( res => {
-          //   console.log(res.data.title == '' )
-          //   if(res.data.title == '') {
-          //     this.$message( {
-          //       message:'文章内容太少了，写多一点再来生成吧',
-          //       type:'warning'
-          //     })
-          //     return ;
-          //   }
-          //   this.article.title = res.data.title;
+          // this.article.title = '大力弘扬企业家精神';
           //   console.log(this.article.title)
           //   this.saveArticle();
-          // });
+          if(!this.preview.flag) {
+            this.$messgae.error("当前正处于预览状态");
+            return ;
+          }
+          this.$apiFun.file.create.title(this.editor.getText()).then( res => {
+            console.log(res.data.title == '' )
+            if(res.data.title == '') {
+              this.$message( {
+                message:'文章内容太少了，写多一点再来生成吧',
+                type:'warning'
+              })
+              return ;
+            }
+            this.article.title = res.data.title;
+            console.log(this.article.title)
+            this.saveArticle();
+          });
         },
         /** 生成摘要 */
         createDiscription() {
@@ -516,9 +517,9 @@ export default {
               circle.style.strokeDashoffset = 100;
               tick.style.strokeDashoffset = 0;
             },500);
-            // this.$apiFun.file.correct(text).then(res => {
+            this.$apiFun.file.match(text).then(res => {
 
-            // })
+            })
             this.$refs.check.init();
           })
         },

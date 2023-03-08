@@ -1,7 +1,7 @@
 <template>
   <div class="nav-def">
     <div class="nav-left">
-      <img @click="to('/index')" src="https://dd-static.jd.com/ddimg/jfs/t1/120151/25/23178/12267/62c8f757Ec74b3883/5ace6de47ce4aae6.png">
+      <img @click="to('/index')" src="http://volit.top/image/717a81d0-9b5a-47f2-a392-7d028d3d3a69.png">
     </div>
     <div class="nav-center">
       <div class="nav-option" @click="optionChange($event.target,1)"><span class="nav-option-title">创作社区</span></div>
@@ -120,7 +120,8 @@ export default {
     justify-content: flex-end;
     padding: .8rem;
     img {
-      height: 4.8rem;
+      width: 6rem;
+      height: 6rem;
       cursor: pointer;
     } 
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <img @click="to('/')" class="fl-logo" src="https://dd-static.jd.com/ddimg/jfs/t1/120151/25/23178/12267/62c8f757Ec74b3883/5ace6de47ce4aae6.png">
+    <img @click="to('/')" class="fl-logo" src="http://volit.top/image/717a81d0-9b5a-47f2-a392-7d028d3d3a69.png">
     <!-- 登录 -->
     <div class="fl-input fl-fadein" v-show="type==='login'">
       <div class="fl-input-title">登录你的账户</div>
@@ -201,7 +201,7 @@ export default {
   position: absolute;
   top: 2.2rem;
   left: 19.5rem;
-  height: 4.8rem;
+  height: 8rem;
   cursor: pointer;
 }
 //通用样式

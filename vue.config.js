@@ -6,6 +6,9 @@ plugins: [
 ]
 
 module.exports = defineConfig({
+  devServer: {
+    port: 3000, // 端口
+  },
   transpileDependencies: true,
   lintOnSave: false,
   productionSourceMap: false,

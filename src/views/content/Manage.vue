@@ -2,7 +2,7 @@
   <div class="manage">
     <div class="fl-aside">
       <div class="fl-logo">
-        <img @click="to('/index')" src="https://s1.ax1x.com/2022/06/02/XYIuff.png">
+        <img @click="to('/index')" src="http://volit.top/image/717a81d0-9b5a-47f2-a392-7d028d3d3a69.png ">
       </div>
       <div class="fl-aside-option">
         <div @click="to('/recent')" :class="{'fl-option-item':true,'active':$route.name==='recent'}"><i class="el-icon-time"></i><span>最近</span></div>
@@ -120,8 +120,8 @@ export default {
   justify-content: center;
   margin: 2.8rem 0;
   img {
-    width: 13rem;
-    height: 5.8rem;
+    width: 8rem;
+    height: 8rem;
     cursor: pointer;
   }
 }

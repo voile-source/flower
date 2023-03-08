@@ -7,7 +7,7 @@
       class="upload-demo"
       :show-file-list="false"
       :on-success="ocrSuccess"
-      action="http://192.168.12.136:8000/ocr">
+      action="http://localhost:8000/ocr">
         <button>点击上传</button>
       </el-upload>
 
@@ -31,16 +31,16 @@ export default {
     }
   },
   created() {
-    this.$apiFun.file.version.list(this.$route.query.id).then( res => {
-      let list = res.data.articleVersionVOList;
-      list.forEach( (item,index) => {
-        this.listData.unshift({
-          id: item.id,
-          time: item.createTime,
-          name:'第'+(index+1)+'版'
-        })
-      })
-    })
+    // this.$apiFun.file.version.list(this.$route.query.id).then( res => {
+    //   let list = res.data.articleVersionVOList;
+    //   list.forEach( (item,index) => {
+    //     this.listData.unshift({
+    //       id: item.id,
+    //       time: item.createTime,
+    //       name:'第'+(index+1)+'版'
+    //     })
+    //   })
+    // })
   },
   methods: {
     returnVersion(id,index) {

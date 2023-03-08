@@ -31,13 +31,13 @@ export default {
   methods: {
     init() {
       this.errorNum = 0;
-      // this.$apiFun.file.match(this.editor.getText()).then( res => {
-      // let data = res.data.matchWords;
-      // this.errorData = data;
-      // Object.keys(data).forEach((key)=> {
-      //   this.errorNum += data[key];
-      //   })
-      // })
+      this.$apiFun.file.match(this.editor.getText()).then( res => {
+      let data = res.data.matchWords;
+      this.errorData = data;
+      Object.keys(data).forEach((key)=> {
+        this.errorNum += data[key];
+        })
+      })
     },
     clear() {
       Object.keys(this.errorData).forEach((key)=> {
